@@ -1,22 +1,22 @@
 fn main() {
-    // Литералы с суффиксами, их вид известен при инициализации
+    // Литералы с суффиксами, их тип известен при инициализации
     let x = 1u8;
-    let y = 2u;
+    let y = 2u32;
     let z = 3f32;
 
-    // Литералы без суффикса, их вид зависит от того, как они используются
+    // Литералы без суффиксов, их тип зависит от того, как их используют
     let i = 1;
     let f = 1.0;
 
     // `size_of_val` возвращает размер переменной в байтах
-    println!("size of `x` in bytes: {}", std::mem::size_of_val(&x));
-    println!("size of `y` in bytes: {}", std::mem::size_of_val(&y));
-    println!("size of `z` in bytes: {}", std::mem::size_of_val(&z));
-    println!("size of `i` in bytes: {}", std::mem::size_of_val(&i));
-    println!("size of `f` in bytes: {}", std::mem::size_of_val(&f));
+    println!("размер `x` в байтах: {}", std::mem::size_of_val(&x));
+    println!("размер `y` в байтах: {}", std::mem::size_of_val(&y));
+    println!("размер `z` в байтах: {}", std::mem::size_of_val(&z));
+    println!("размер `i` в байтах: {}", std::mem::size_of_val(&i));
+    println!("размер `f` в байтах: {}", std::mem::size_of_val(&f));
 
     // Ограничения (слагаемые должны иметь тот же тип) для `i` и `f`
     let _constraint_i = x + i;
     let _constraint_f = z + f;
-    // Закомментируйте эти две строки
+    // ЗАДАНИЕ ^ Закомментируйте эти две строки
 }

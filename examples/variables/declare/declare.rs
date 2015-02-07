@@ -3,21 +3,21 @@ fn main() {
     let a_variable;
 
     {
-        let x = 2i;
+        let x = 2;
 
         // Инициализируем переменную
         a_variable = x * x;
     }
 
-    println!("a variable: {}", a_variable);
+    println!("переменная: {}", a_variable);
 
     let another_variable;
 
     // Ошибка! Использование неинициализированной переменной
-    println!("another variable: {}", another_variable);
+    println!("другая переменная: {}", another_variable);
     // ИСПРАВЬТЕ ^ Закомментируйте строку
 
-    another_variable = 1i;
+    another_variable = 1;
 
-    println!("another variable: {}", another_variable);
+    println!("другая переменная: {}", another_variable);
 }

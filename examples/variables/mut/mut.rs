@@ -1,14 +1,15 @@
 fn main() {
-    let _immutable_variable = 1i;
-    let mut mutable_variable = 1i;
+    let _immutable_variable = 1;
+    let mut mutable_variable = 1;
 
-    println!("Before mutation: {}", mutable_variable);
+    println!("Перед изменением: {}", mutable_variable);
 
     // Ок
     mutable_variable += 1;
 
-    println!("After mutation: {}", mutable_variable);
+    println!("После изменения: {}", mutable_variable);
 
     // Ошибка!
     _immutable_variable += 1;
+    // ИСПРАВЬТЕ ^ Закоментируйте эту строку
 }
