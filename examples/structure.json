@@ -19,9 +19,9 @@
       { "id": "nested", "title": "Nesting and labels", "children": null }
   ] },
   { "id": "while", "title": "While", "children": null },
-  { "id": "for", "title": "For and range", "children": null },
+//  { "id": "for", "title": "For and range", "children": null },
   { "id": "fn", "title": "Functions", "children": [
-      { "id": "unused", "title": "Unused", "children": null }
+//      { "id": "unused", "title": "Unused", "children": null }
   ] },
   { "id": "mod", "title": "Modules", "children": [
       { "id": "visibility", "title": "Visibility", "children": null },
