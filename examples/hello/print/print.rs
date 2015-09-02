@@ -20,12 +20,12 @@ fn main() {
     // Ошибка! Пропущен агрумент
     println!("My name is {0}, {1} {0}", "Bond");
     // ИСПРАВЬТЕ ^ добавьте отсутствующий аргумент: "James"
-    
-    // Create a structure which contains an `i32`. Name it `Structure`.
+
+    // Создадим структуру который содержит `i32`. Назовем ее `Structure`.
     struct Structure(i32);
 
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
+    // Однако, свои типы как эта структура требуют более усложненную обработку.
+    // Этот код не сработает.
     println!("This struct `{}` won't print...", Structure(3));
-    // FIXME ^ Comment out this line.
+    // ИСПРАВЬТЕ ^ Закомментируйте эту строку.
 }

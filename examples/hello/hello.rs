@@ -1,9 +1,9 @@
 // Это комментарий, и он будет проигнорирован компилятором
-// You can test this code by clicking the "Run" button over there ->
-// or if prefer to use your keyboard, you can use the "Ctrl + Enter" shortcut
+// Вы можете протестировать этот код, нажав кнопку "Run" прямо тут ->
+// или если вы предпочитаете использовать свою клавиатуру, вы можете использовать горячую клавишу "Ctrl + Enter"
 
-// This code is editable, feel free to hack it!
-// You can always return to the original code by clicking the "Reset" button ->
+// Этот код редактируемый, можете свободно хакать!
+// Вы всегда можете вернуться к оригинальному коду, нажав на кнопку "Reset" ->
 
 // Это основная функция
 fn main() {

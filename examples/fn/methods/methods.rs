@@ -3,17 +3,16 @@ struct Point {
     y: f64,
 }
 
-// Implementation block, all `Point` methods go in here
-// ���� ����������, ��� ������ `Point` ���� ����
+// Блок реализаций, все методы `Point` идут сюда
 impl Point {
-    // This is a static method
-    // Static methods don't need to be called by an instance
-    // These methods are generally used as constructors
+    // Это статический метод
+    // Статические методы не нуждаются в вызове от экземпляра
+    // Эти методы, как правило, используются как конструкторы
     fn origin() -> Point {
         Point { x: 0.0, y: 0.0 }
     }
 
-    // Another static method, that takes two arguments
+    // Другой статический метод, берет два аргумента
     fn new(x: f64, y: f64) -> Point {
         Point { x: x, y: y }
     }
@@ -25,16 +24,16 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // This is an instance method
-    // `&self` is sugar for `self: &Self`, where `Self` is the type of the
-    // caller object. In this case `Self` = `Rectangle`
+    // Это метод экземпляра
+    // `&self` это сахар для `self: &Self`, где `Self` это тип
+    // вызываемого объекта. В этом месте `Self` = `Rectangle`
     fn area(&self) -> f64 {
-        // `self` gives access to the struct fields via the dot operator
+        // `self` дает допуск к полям структуры через оператор точка
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        // `abs` is a `f64` method that returns the absolute value of the
-        // caller
+        // `abs` это метод `f64` который возвращает абсолютную величину
+        // вызываемого
         ((x1 - x2) * (y1 - y2)).abs()
     }
 
@@ -45,8 +44,8 @@ impl Rectangle {
         2.0 * ((x1 - x2).abs() + (y1 - y2).abs())
     }
 
-    // This method requires the caller object to be mutable
-    // `&mut self` desugars to `self: &mut Self`
+    // Этот метод требует чтобы вызываемый объект был изменяемым
+    // `&mut self` сахар для `self: &mut Self`
     fn translate(&mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
@@ -56,31 +55,31 @@ impl Rectangle {
     }
 }
 
-// `Pair` owns resources: two heap allocated integers
+// `Pair` владеет ресурсами: два целых числа в куче
 struct Pair(Box<i32>, Box<i32>);
 
 impl Pair {
-    // This method "consumes" the resources of the caller object
-    // `self` desugars to `self: Self`
+    // Этот метод "съедает" ресурсы вызываемого объекта
+    // `self` сахар для `self: Self`
     fn destroy(self) {
-        // Destructure `self`
+        // деструктуризация `self`
         let Pair(first, second) = self;
 
         println!("Destroying Pair({}, {})", first, second);
 
-        // `first` and `second` go out of scope and get freed
+        // `first` и `second` выходят из области видимости и освобождаются
     }
 }
 
 fn main() {
     let rectangle = Rectangle {
-        // Static methods are called using double colons
+        // Статические методы вызываются двойными двоеточиями
         p1: Point::origin(),
         p2: Point::new(3.0, 4.0),
     };
 
-    // Instance method are called using the dot operator
-    // Note that the first argument `&self` is implicitly passed, i.e.
+    // Метод экземпляра вызывается с помощью оператора точка
+    // Обратите внимание, что первый аргумент `&self` неявно пропускается т.е.
     // `rectangle.perimeter()` === `perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
@@ -90,19 +89,19 @@ fn main() {
         p2: Point::new(1.0, 1.0),
     };
 
-    // Error! `rectangle` is immutable, but this method requires a mutable
-    // object
+    // Ошибка! `rectangle` неизменяемый, но этот метод нуждается в изменяемом
+    // объекте
     //rectangle.translate(1.0, 0.0);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Попробуйте удалить комментарий
 
-    // Ok, mutable object can call mutable methods
+    // Хорошо, изменяемый объект может вызывать изменяемые методы
     square.translate(1.0, 1.0);
 
     let pair = Pair(Box::new(1), Box::new(2));
 
     pair.destroy();
 
-    // Error! Previous `destroy` call "consumed" `pair`
+    // Ошибка! `destroy` вызывает "съеденный" `pair`
     //pair.destroy();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Попробуйте удалить комментарий
 }
