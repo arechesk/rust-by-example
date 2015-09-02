@@ -5,18 +5,18 @@ use std::marker::PhantomData;
 struct Tuple<A>(A,);
 
 // Этот кортеж является фантомным типом, B — скрытый параметр.
-// Место в памяти выделяется под А, но не под B. Поэтому B
-// не может быть использован в вычислениях.
+// Место в памяти выделяется под обобщённый тип А, но не под B.
+// Поэтому B не может быть использован в вычислениях.
 #[derive(PartialEq)] // Allow equality test for this type
 struct PhantomTuple<A, B>(A,PhantomData<B>);
 
-// Аналогично, фантомная структура обобщённая над А со скрытым
+// Аналогично, фантомная структура, обобщённая над А со скрытым
 // параметром B
 #[derive(PartialEq)] // Allow equality test for this type
 struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
 
 fn main() {
-    // instantiate Tuple кортеж (для сравнения)
+    // instantiate Tuple
     let _tuple: Tuple<char> = Tuple('R');
 
     // We can create similar types without carrying around extra info
