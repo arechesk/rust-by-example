@@ -3,21 +3,24 @@
 
 ```rust
 struct S; // Пустая структура
-struct GenericTup<T>(T,);
+struct GenericVal<T>(T,);
 
-// специализируем GenericTup для конкретных типов:
-impl GenericTup<f32> {} // Специализируем для `f32`
-impl GenericTup<S> {} // Специализируем для `S`, определённого выше
+// специализируем GenericVal для конкретных типов:
+impl GenericVal<f32> {} // Специализируем для `f32`
+impl GenericVal<S> {} // Специализируем для `S`, определённого выше
 
 // `<T>` должно быть перед типом, чтобы он оставался обобщённым
-impl <T> GenericTup<T> {}
+impl <T> GenericVal<T> {}
 ```
 
 {impl.play}
 
 ###См. также:
 
-[impl](http://rustbyexample.com/methods.html),
-[struct](http://rustbyexample.com/structs.html), and
-[functions returning references](http://rustbyexample.com/lifetime/fn.html),
+[functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 
+
+[fn]: /scope/lifetime/fn.html
+[methods]: /fn/methods.html
+[specialization_plans]: http://blog.rust-lang.org/2015/05/11/traits.html#the-future
+[structs]: /custom_types/structs.html

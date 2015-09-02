@@ -32,4 +32,9 @@ fn main() {
     // их от литералов, заключённых в скобки
     println!("кортеж с единственным элементом: {:?}", (5u32,));
     println!("просто число: {:?}", (5u32));
+    //tuples can be destructured to create bindings
+    let tuple = (1, "hello", 4.5, true);
+
+    let (a, b, c, d) = tuple;
+    println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 }

@@ -21,4 +21,8 @@ fn main() {
     // ИСПРАВЬТЕ ^ Закомментируйте строку
 
     println!("outer long: {}", long_lived_variable);
+    // This binding also *shadows* the previous binding
+    let long_lived_variable = 'a';
+    
+    println!("outer long: {}", long_lived_variable);
 }

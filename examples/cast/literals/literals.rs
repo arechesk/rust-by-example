@@ -14,9 +14,4 @@ fn main() {
     println!("размер `z` в байтах: {}", std::mem::size_of_val(&z));
     println!("размер `i` в байтах: {}", std::mem::size_of_val(&i));
     println!("размер `f` в байтах: {}", std::mem::size_of_val(&f));
-
-    // Ограничения (слагаемые должны иметь тот же тип) для `i` и `f`
-    let _constraint_i = x + i;
-    let _constraint_f = z + f;
-    // ЗАДАНИЕ ^ Закомментируйте эти две строки
 }

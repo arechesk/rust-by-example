@@ -1,27 +1,20 @@
-struct Tup (f64,);
-struct GenTup<T>(T,);
+struct Val (f64,);
+struct GenVal<T>(T,);
 
-// реалицация Tup
-impl Tup {
-    fn value(&self) -> &f64 {
-        let &Tup ( ref val ) = self;
-
-        val
-    }
+// реалицация Val
+impl Val {
+    fn value(&self) -> &f64 { &self.0 }
 }
 
-// реализация GenTup для обобщённого типа `T`
-impl <T> GenTup<T> {
-    fn value(&self) -> &T {
-        let &GenTup (ref val) = self;
-        
-        val
-    }
+// реализация GenVal для обобщённого типа `T`
+impl <T> GenVal<T> {
+    fn value(&self) -> &T { &self.0 }
+
 }
 
 fn main() {
-    let x = Tup(3.0);
-    let y = GenTup(3i32);
+    let x = Val(3.0);
+    let y = GenVal(3i32);
     
     println!("{}, {}", x.value(), y.value());
 }

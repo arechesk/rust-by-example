@@ -1,4 +1,7 @@
-Можно деконструировать ветви блока `match`, и можно добавить *охрану* для
-дополнительного отсеевания значений в ветви.
+A `match` *guard* can be added to filter the arm.
 
 {guard.play}
+
+### See also:
+
+[Tuples](/primitives/tuples.html)

@@ -2,6 +2,8 @@
 
 {alias.play}
 
-Основное применение псевдонимов — сокращение размера кода: например, тип [`IoResult<T>`][io-result] является псевдонимом типа `Result<T, IoError>`.
+Основное применение псевдонимов — сокращение размера кода: например, тип `IoResult<T>` является псевдонимом типа `Result<T, IoError>`.
 
-[io-result]: http://doc.rust-lang.org/std/old_io/type.IoResult.html
+### Так же смотрите:
+
+[Attributes](/attribute.html)

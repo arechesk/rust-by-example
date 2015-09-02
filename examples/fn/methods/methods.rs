@@ -4,7 +4,7 @@ struct Point {
 }
 
 // Implementation block, all `Point` methods go in here
-// Р‘Р»РѕРє СЂРµР°Р»РёР·Р°С†РёР№, РІСЃРµ РјРµС‚РѕРґС‹ `Point` РёРґСѓС‚ СЃСЋРґР°
+// Блок реализаций, все методы `Point` идут сюда
 impl Point {
     // This is a static method
     // Static methods don't need to be called by an instance

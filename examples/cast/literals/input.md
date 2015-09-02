@@ -13,6 +13,6 @@
    функция определена в модуле `mem`, а модуль `mem` определён в *крэйте* `std`.
    Подробнее см. [модули][mod] и [крэйты][crate].
 
-[borrow]: /borrow.html
+[borrow]: /scope/borrow.html
 [mod]: /mod.html
 [crate]: /crates.html
